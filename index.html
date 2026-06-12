@@ -5,13 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Main Content */
+        .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
-            line-height: 1.6;
-            background-color: #f9f9f9;
         }
 
         h1, h2 {
@@ -78,44 +120,68 @@
         .cta-button:hover {
             background-color: #45a049;
         }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>👍 Triple Thumbs Up Mindset 👍</h1>
-        <p>Embrace positivity, growth, and success with the three core principles that will transform your approach to life and business.</p>
-    </div>
+    <!-- Navigation Header -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#principles">Principles</a></li>
+            <li><a href="#cta">Get Started</a></li>
+        </ul>
+    </nav>
 
-    <hr>
+    <div class="container">
 
-    <h2>The Three Principles</h2>
-
-    <div class="principles">
-        <div class="principle-card">
-            <div class="principle-icon">👍</div>
-            <h3>Principle #1: Optimism</h3>
-            <p>Approach every challenge with a positive mindset. Believe in possibilities and see opportunities in every setback.</p>
+        <!-- Hero Section -->
+        <div class="hero" id="home">
+            <h1>👍 Triple Thumbs Up Mindset 👍</h1>
+            <p>Embrace positivity, growth, and success with the three core principles that will transform your approach to life and business.</p>
         </div>
 
-        <div class="principle-card">
-            <div class="principle-icon">👍</div>
-            <h3>Principle #2: Action</h3>
-            <p>Transform your positive thoughts into real-world action. Take consistent steps toward your goals, no matter how small.</p>
+        <hr>
+
+        <!-- Principles Section -->
+        <h2 id="principles">The Three Principles</h2>
+
+        <div class="principles">
+            <div class="principle-card">
+                <div class="principle-icon">👍</div>
+                <h3>Principle #1: Optimism</h3>
+                <p>Approach every challenge with a positive mindset. Believe in possibilities and see opportunities in every setback.</p>
+            </div>
+
+            <div class="principle-card">
+                <div class="principle-icon">👍</div>
+                <h3>Principle #2: Action</h3>
+                <p>Transform your positive thoughts into real-world action. Take consistent steps toward your goals, no matter how small.</p>
+            </div>
+
+            <div class="principle-card">
+                <div class="principle-icon">👍</div>
+                <h3>Principle #3: Growth</h3>
+                <p>Continuously evolve and improve. Learn from every experience and commit to becoming the best version of yourself.</p>
+            </div>
         </div>
 
-        <div class="principle-card">
-            <div class="principle-icon">👍</div>
-            <h3>Principle #3: Growth</h3>
-            <p>Continuously evolve and improve. Learn from every experience and commit to becoming the best version of yourself.</p>
+        <hr>
+
+        <!-- CTA Section -->
+        <div class="cta" id="cta">
+            <h2>Ready to Transform Your Mindset?</h2>
+            <button class="cta-button">Get Started Today</button>
         </div>
-    </div>
 
-    <hr>
-
-    <div class="cta">
-        <h2>Ready to Transform Your Mindset?</h2>
-        <button class="cta-button">Get Started Today</button>
     </div>
 
 </body>

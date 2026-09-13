@@ -1,188 +1,803 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Triple Thumbs Up Mindset</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
+  <title>TTUM | Triple Thumbs Up Mindset</title>
 
-        /* Navigation Styles */
-        nav {
-            background-color: #333;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+  <meta
+    name="description"
+    content="TTUM connects needs with skills, ideas with action, and people with opportunity."
+  >
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            max-width: 800px;
-            margin: auto;
-            padding: 0 20px;
-            flex-wrap: wrap;
-        }
+  <style>
+    :root {
+      --bg: #07110d;
+      --bg-soft: #0d1b15;
+      --card: #11231b;
+      --card-light: #173126;
+      --text: #f4f7f5;
+      --muted: #aebbb4;
+      --green: #49e38a;
+      --green-dark: #1e9b58;
+      --border: rgba(255,255,255,0.10);
+      --max: 1100px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        nav a:hover {
-            color: #4CAF50;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Main Content */
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(73,227,138,0.12), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        h1, h2 {
-            text-align: center;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        hr {
-            margin: 30px 0;
-        }
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
 
-        .hero {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    /* NAVIGATION */
 
-        .principles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7,17,13,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        .principle-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .principle-card:hover {
-            transform: translateY(-5px);
-        }
+    .logo {
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: 1.15rem;
+    }
 
-        .principle-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
+    .logo span {
+      color: var(--green);
+    }
 
-        .cta {
-            margin-top: 40px;
-            text-align: center;
-        }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-size: 0.95rem;
+    }
 
-        .cta-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .nav-links a {
+      color: var(--muted);
+      transition: 0.2s;
+    }
 
-        .cta-button:hover {
-            background-color: #45a049;
-        }
+    .nav-links a:hover {
+      color: var(--green);
+    }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            nav ul {
-                gap: 15px;
-                font-size: 14px;
-            }
-        }
-    </style>
+    /* HERO */
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(73,227,138,0.35);
+      color: var(--green);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      font-weight: bold;
+      margin-bottom: 22px;
+      background: rgba(73,227,138,0.06);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 6.8rem);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      border: 1px solid var(--border);
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: #06110b;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #6df0a2;
+    }
+
+    .button-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(73,227,138,0.5);
+    }
+
+    /* CORE IDEA */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .flow-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 14px;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-item strong {
+      display: block;
+      color: var(--green);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .flow-item small {
+      color: var(--muted);
+    }
+
+    /* PRINCIPLES */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(
+        145deg,
+        var(--card),
+        rgba(17,35,27,0.55)
+      );
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      min-height: 230px;
+    }
+
+    .card-number {
+      color: var(--green);
+      font-weight: 900;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    /* HOW IT WORKS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+      border-radius: 16px;
+    }
+
+    .step-number {
+      flex: 0 0 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06110b;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin-bottom: 5px;
+    }
+
+    .step p {
+      color: var(--muted);
+    }
+
+    /* MVP */
+
+    .mvp {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(73,227,138,0.12),
+          transparent 55%
+        ),
+        var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mvp-box {
+      border: 1px solid rgba(73,227,138,0.25);
+      border-radius: 22px;
+      padding: 45px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .mvp-box h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .mvp-box p {
+      color: var(--muted);
+      max-width: 750px;
+      margin-bottom: 25px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      padding: 14px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: bold;
+      margin-right: 9px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 110px 0;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 0.82rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 0 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cards,
+      .steps,
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .mvp-box {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-inner {
+        min-height: 60px;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+
+      .nav-links li:nth-child(2),
+      .nav-links li:nth-child(3) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Navigation Header -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#principles">Principles</a></li>
-            <li><a href="#cta">Get Started</a></li>
-        </ul>
-    </nav>
+  <!-- NAVIGATION -->
 
-    <div class="container">
+  <nav>
+    <div class="container nav-inner">
 
-        <!-- Hero Section -->
-        <div class="hero" id="home">
-            <h1>👍 Triple Thumbs Up Mindset 👍</h1>
-            <p>Embrace positivity, growth, and success with the three core principles that will transform your approach to life and business.</p>
-        </div>
+      <a href="#top" class="logo">
+        TTUM<span>³</span>
+      </a>
 
-        <hr>
-
-        <!-- Principles Section -->
-        <h2 id="principles">The Three Principles</h2>
-
-        <div class="principles">
-            <div class="principle-card">
-                <div class="principle-icon">👍</div>
-                <h3>Principle #1: Optimism</h3>
-                <p>Approach every challenge with a positive mindset. Believe in possibilities and see opportunities in every setback.</p>
-            </div>
-
-            <div class="principle-card">
-                <div class="principle-icon">👍</div>
-                <h3>Principle #2: Action</h3>
-                <p>Transform your positive thoughts into real-world action. Take consistent steps toward your goals, no matter how small.</p>
-            </div>
-
-            <div class="principle-card">
-                <div class="principle-icon">👍</div>
-                <h3>Principle #3: Growth</h3>
-                <p>Continuously evolve and improve. Learn from every experience and commit to becoming the best version of yourself.</p>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- CTA Section -->
-        <div class="cta" id="cta">
-            <h2>Ready to Transform Your Mindset?</h2>
-            <button class="cta-button">Get Started Today</button>
-        </div>
+      <ul class="nav-links">
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#mvp">MVP</a></li>
+      </ul>
 
     </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            TRIPLE THUMBS UP MINDSET
+          </div>
+
+          <h1>
+            Turn ideas into<br>
+            <span>action.</span>
+          </h1>
+
+          <p>
+            TTUM is a new way of connecting people, needs, skills,
+            ideas and opportunity. Find the connection. Create value.
+            Move forward.
+          </p>
+
+          <div class="buttons">
+            <a href="#how" class="button button-primary">
+              Explore TTUM
+            </a>
+
+            <a href="#mvp" class="button button-secondary">
+              See the MVP
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CORE FLOW -->
+
+    <section id="how">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>The basic connection.</h2>
+
+          <p>
+            TTUM starts with something simple:
+            connect what is needed with what someone can do.
+          </p>
+        </div>
+
+        <div class="flow">
+
+          <div class="flow-item">
+            <strong>Needs</strong>
+            <small>What needs solving?</small>
+          </div>
+
+          <div class="flow-item">
+            <strong>Skills</strong>
+            <small>Who can help?</small>
+          </div>
+
+          <div class="flow-item">
+            <strong>Connections</strong>
+            <small>Find the match.</small>
+          </div>
+
+          <div class="flow-item">
+            <strong>Action</strong>
+            <small>Make it happen.</small>
+          </div>
+
+          <div class="flow-item">
+            <strong>Value</strong>
+            <small>Create something useful.</small>
+          </div>
+
+          <div class="flow-item">
+            <strong>Dollars</strong>
+            <small>Measure the exchange.</small>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PRINCIPLES -->
+
+    <section id="principles">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Three states of motion.</h2>
+
+          <p>
+            TTUM is built around three ideas that turn thought
+            into forward movement.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="card-number">01 / OPTIMISM</div>
+
+            <h3>See possibility.</h3>
+
+            <p>
+              Look for constructive interpretations,
+              opportunities and paths forward instead of
+              treating every obstacle as the end of the road.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-number">02 / GROWTH</div>
+
+            <h3>Learn and adapt.</h3>
+
+            <p>
+              Skills are not fixed. Knowledge can grow,
+              mistakes can teach and useful connections
+              can turn experience into capability.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-number">03 / ACTION</div>
+
+            <h3>Move.</h3>
+
+            <p>
+              An idea becomes valuable when something is
+              done with it. TTUM favors useful action over
+              endless preparation.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>From zero presence to value.</h2>
+
+          <p>
+            The long-term TTUM system is designed to help
+            people identify what they can offer, discover
+            what others need and create useful exchanges.
+          </p>
+        </div>
+
+
+        <div class="steps">
+
+          <article class="step">
+
+            <div class="step-number">1</div>
+
+            <div>
+              <h3>Identify</h3>
+
+              <p>
+                Describe a need, problem, skill, idea or
+                opportunity.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">2</div>
+
+            <div>
+              <h3>Connect</h3>
+
+              <p>
+                Find people, abilities and resources that
+                could create a useful match.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">3</div>
+
+            <div>
+              <h3>Act</h3>
+
+              <p>
+                Turn the connection into a conversation,
+                task, collaboration or transaction.
+              </p>
+            </div>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">4</div>
+
+            <div>
+              <h3>Create value</h3>
+
+              <p>
+                Track what was created, what was exchanged
+                and where the next opportunity leads.
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MVP -->
+
+    <section class="mvp" id="mvp">
+
+      <div class="container">
+
+        <div class="mvp-box">
+
+          <h2>TTUM MVP v0.1</h2>
+
+          <p>
+            This first version is intentionally simple.
+            The goal is not to pretend the entire network
+            already exists. The goal is to build the first
+            usable piece of it.
+          </p>
+
+          <ul class="feature-list">
+
+            <li>Needs and opportunity posts</li>
+
+            <li>Skill and ability profiles</li>
+
+            <li>Connection and matching concepts</li>
+
+            <li>Action-oriented pathways</li>
+
+            <li>Value and exchange tracking</li>
+
+            <li>Foundation for future accounts</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <h2>
+          Connect the dots.
+        </h2>
+
+        <p>
+          Ideas are everywhere. Skills are everywhere.
+          Needs are everywhere. TTUM is about connecting them.
+        </p>
+
+        <a href="#top" class="button button-primary">
+          Triple Thumbs Up
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        <strong>TTUM³</strong>
+        &nbsp; Triple Thumbs Up Mindset
+      </div>
+
+      <div>
+        Optimism. Growth. Action.
+      </div>
+
+      <div>
+        © 2026 Dottodotdollars.com
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
